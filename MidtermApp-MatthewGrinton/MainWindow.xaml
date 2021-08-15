@@ -1,0 +1,54 @@
+﻿<Window x:Name="MainWindowWindow" x:Class="MidtermApp_MatthewGrinton.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MidtermApp_MatthewGrinton"
+        mc:Ignorable="d"
+        Title="StoreApp-MatthewGrinton" Height="417.6" Width="577.52">
+    <Grid Margin="0,0,2,0">
+        <Button x:Name="Search" Content="Search" HorizontalAlignment="Left" Margin="472,46,0,0" VerticalAlignment="Top" Width="75" Click="searchButton_Click"/>
+        <TextBox x:Name="Search_Bar" HorizontalAlignment="Left" Height="23" Margin="162,46,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="273"/>
+        <Label x:Name="Search_Label" Content="Product Name:" HorizontalAlignment="Left" Margin="44,46,0,0" VerticalAlignment="Top" Width="89"/>
+        <Label x:Name="Product_Description_Label" Content="Description:" HorizontalAlignment="Left" Margin="44,99,0,0" VerticalAlignment="Top" Width="89"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="85" Margin="162,99,0,0" VerticalAlignment="Top" Width="376">
+            <TextBox x:Name="Product_Description" TextWrapping="Wrap" Text="" IsReadOnly="True"/>
+        </Border>
+        <Label x:Name="Product_Type_Label" Content="Type:" HorizontalAlignment="Left" Margin="44,202,0,0" VerticalAlignment="Top" Width="89"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="26" Margin="162,202,0,0" VerticalAlignment="Top" Width="107">
+            <ComboBox x:Name="Product_Type" IsReadOnly="True"/>
+
+        </Border>
+        <Label x:Name="Price_Label" Content="Price: " HorizontalAlignment="Left" Margin="310,202,0,0" VerticalAlignment="Top" Width="89"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="26" Margin="366,202,0,0" VerticalAlignment="Top" Width="83" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="-0.485"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="0.352"/>
+                </TransformGroup>
+            </Border.RenderTransform>
+            <TextBox x:Name="Price" TextWrapping="Wrap" Text="" IsReadOnly="True"/>
+        </Border>
+        <CheckBox x:Name="Sale" Content="on sale" HorizontalAlignment="Left" Margin="467,208,0,0" VerticalAlignment="Top" Checked="Sale_Checked" Unchecked="Sale_Unchecked"/>
+        <Label x:Name="Order_Label" Content="Order: " HorizontalAlignment="Left" Margin="44,266,0,0" VerticalAlignment="Top" Width="89" RenderTransformOrigin="0.698,2.38"/>
+        <TextBox x:Name="Order" HorizontalAlignment="Left" Height="27" Margin="162,266,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="376"/>
+        <RadioButton x:Name="Quantity" Content="quantity" HorizontalAlignment="Left" Margin="162,306,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="Total_Amount" Content="total $ amount" HorizontalAlignment="Left" Margin="310,306,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="Purchase" Content="Purchase" HorizontalAlignment="Left" Margin="472,306,0,0" VerticalAlignment="Top" Width="75" Click="purchaseButton_Click"/>
+        <Button x:Name="Display_Shopping_Cart" Content="Display Shopping Cart" HorizontalAlignment="Left" Margin="44,343,0,0" VerticalAlignment="Top" Width="503" Click="displayButton_Click">
+            <Button.DataContext>
+                <local:Window1/>
+            </Button.DataContext>
+        </Button>
+        <Menu Width="Auto" Height="28" Margin="0,0,0,362">
+            <MenuItem Header="_File">
+                <MenuItem x:Name="AppExit" Header="E_xit" HorizontalAlignment="Left" Width="140" Click="AppExit_Click"/>
+            </MenuItem>
+            <MenuItem Header="_Tools">
+                <MenuItem x:Name="Admin" Header="_Admin" HorizontalAlignment="Left" Width="140" Click="Admin_Pannel_View"/>
+            </MenuItem>
+        </Menu>
+    </Grid>
+</Window>
